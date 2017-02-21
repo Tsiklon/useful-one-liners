@@ -11,7 +11,7 @@ iperf -c <listening server ip> -t <max time> -i <update interval seconds> -w <tc
 -- Server sending - udp --
 iperf -c 192.168.216.148 -u -b 100m -t 5
 
---- ALl Traffic Between two hosts --- replace eth0 and ip's as appropriate
+--- All Traffic Between two hosts --- replace iface and ip's as appropriate
 tcpdump -n -i <iface> "host <host1-ip> and <host2-ip>"
 
 --- All Traffic on a port on a host - writes pcap file ---
