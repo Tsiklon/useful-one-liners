@@ -1,0 +1,6 @@
+
+-- Low disk, replace '/' with the filesystem in question, presents date, fs information + largest 15 folders (assuming usage in Gigabytes) --
+FS='/';resize;clear;date;df -h $FS; echo "Largest Directories:"; du -hcx --max-depth=2 $FS 2>/dev/null | grep [0-9]G | head -15 | sort -rk 1;
+
+-- File + Subdirectory count --
+FS=./;echo "Filecount for" `pwd`; find $FS -type f | wc -l|sed -r ':L;s=\b([0-9]+)([0-9]{3})\b=\1,\2=g;t L';echo "Subdirectory count for" `pwd`;find $FS -type d | wc -l| sed -r ':L;s=\b([0-9]+)([0-9]{3})\b=\1,\2=g;t L';
