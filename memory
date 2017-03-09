@@ -1,5 +1,6 @@
 -- Top 20 Memory consuming processes and Processes using memory --
-echo -e "\n$(date)\n\n~~~~~ Top 20 processes actively consuming Memory ~~~~~\n$(ps aux |awk '{print $2,$4,$11,$12,$13,$14,$15}' | grep "MEM") \n$(ps aux | awk '{print $2,$4,$11,$12,$13,$14,$15}' | grep -v "PID\|0.0"|sort --field-separator=" " -nk2 -r  | head -n 20)\n\n~~~~~ Number of Processes actively consuming Memory - $(ps aux | awk '{print $2,$4,$11,$12,$13,$14,$15}'  | grep -v "0.0"|wc -l)\n"; 
+tmpPSaux=`date;ps aux`; echo -e "\n$(echo $tmpPSaux |head -n1)\n\n~~~~~ Top 20 processes actively consuming Memory ~~~~~\n$(echo $tmpPSaux | awk '{print $2,$4,$11,$12,$13,$14,$15}' | grep "MEM") \n$(echo $tmpPSaux | awk '$4 != 0.0 {print $2,$4,$11,$12,$13,$14,$15}' | grep -v "PID"|sort --field-separator=" " -nk4 -r  | head -n 20)\n\n~~~~~ Number of Processes actively consuming Memory - $(echo $tmpPSaux | awk '$4 != 0.0 {print $2,$4,$11,$12,$13,$14,$15}' | wc -l) ~~~~~\n~~~~~ Total % of memory used - $(echo $tmpPSaux | awk '$4 != 0.0 {sum += $4} END {print sum}')% ~~~~~";
+
 
 -- Memory usage from SAR from the last 2 hours --
 memtot=`free -m | awk '$1 ~ /Mem/ {print $2}'`; echo -e "\nTime\t\tPercent\n";sar -r -s `date --date "-2 hours" +%T`|tail -n +4 |awk -v memtot="$memtot" '{printf "%s %s %8d % \n",$1,$2,(($4-$6-$7)/1024)*100/memtot}'|grep -v Average
