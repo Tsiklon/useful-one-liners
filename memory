@@ -1,5 +1,5 @@
 -- Top 20 Memory consuming processes and Processes using memory --
-tmpPSaux=`date;ps aux`; echo -e "\n$(echo $tmpPSaux |head -n1)\n\n~~~~~ Top 20 processes actively consuming Memory ~~~~~\n$(echo $tmpPSaux | awk '{print $2,$4,$11,$12,$13,$14,$15}' | grep "MEM") \n$(echo $tmpPSaux | awk '$4 != 0.0 {print $2,$4,$11,$12,$13,$14,$15}' | grep -v "PID"|sort --field-separator=" " -nk4 -r  | head -n 20)\n\n~~~~~ Number of Processes actively consuming Memory - $(echo $tmpPSaux | awk '$4 != 0.0 {print $2,$4,$11,$12,$13,$14,$15}' | wc -l) ~~~~~\n~~~~~ Total % of memory used - $(echo $tmpPSaux | awk '$4 != 0.0 {sum += $4} END {print sum}')% ~~~~~";
+tmpPSaux=`date;ps aux`; echo -e "\n$(echo $tmpPSaux |head -n1)\n\n~~~~~ Top 20 processes actively consuming Memory ~~~~~\n$(echo $tmpPSaux | awk '{print $2,$4,$11,$12,$13,$14,$15}' | grep "MEM") \n$(echo $tmpPSaux | awk '$4 != 0.0 {print $2,$4,$11,$12,$13,$14,$15}' | grep -v "PID"|sort --field-separator=" " -nk4 -r  | head -n 20)\n\n~~~~~ Number of Processes actively consuming Memory - $(echo $tmpPSaux | awk '$4 != 0.0 {print $2,$4,$11,$12,$13,$14,$15}'| grep -v "PID" | wc -l) ~~~~~\n~~~~~ Total % of memory used - $(echo $tmpPSaux | awk '$4 != 0.0 {sum += $4} END {print sum}')% ~~~~~";
 
 
 -- Memory usage from SAR from the last 2 hours --
