@@ -28,7 +28,7 @@ CREATE DATABASE db_name;
 SELECT col_name FROM table_name;
 	
 -- Total database size for a specific database --
-SELECT table_schema "Database Name", data_length, index_length, sum(data_length + index_length)/1024/1024 "Total size in MB"from information_schema.TABLES WHERE table_schema LIKE 'db_name' GROUP BY table_schema\G;
+SELECT table_schema "Database Name", data_length, index_length, (data_length + index_length)/(1024*1024) "Total size in MB"from information_schema.TABLES WHERE table_schema LIKE 'db_name' GROUP BY table_schema\G
 	
 -- Show all MyISAM Tables and their size in Bytes --
 SELECT TABLE_SCHEMA,TABLE_NAME,ENGINE,DATA_LENGTH from INFORMATION_SCHEMA.TABLES where engine = 'MyISAM' and TABLE_SCHEMA not IN('mysql','information_schema','performance_schema');
