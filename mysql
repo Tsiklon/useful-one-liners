@@ -33,6 +33,7 @@ SELECT table_schema "Database Name", data_length, index_length, (data_length + i
 -- Show all MyISAM Tables and their size in Bytes --
 SELECT TABLE_SCHEMA,TABLE_NAME,ENGINE,DATA_LENGTH from INFORMATION_SCHEMA.TABLES where engine = 'MyISAM' and TABLE_SCHEMA not IN('mysql','information_schema','performance_schema');
 
+-- Select all tables where the storage engine is MyISAM, and the tables aren't system tables --
 SELECT TABLE_SCHEMA,TABLE_NAME,ENGINE from INFORMATION_SCHEMA.TABLES where engine = 'MyISAM' and TABLE_SCHEMA not IN('mysql','information_schema','performance_schema');
 
 --Replication status --
