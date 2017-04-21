@@ -15,7 +15,10 @@ iperf -c 192.168.216.148 -u -b 100m -t 5
 tcpdump -n -i <iface> "host <host1-ip> and <host2-ip>"
 
 --- All Traffic on a port on a host - writes pcap file ---
-tcpdump -n -I <interfacename> "dst host <hostip> and dst port <host port>" -w /path/to/output.pcap
+tcpdump -n -i <interfacename> "dst host <hostip> and dst port <host port>" -w /path/to/output.pcap
+
+--- All Traffic between two hosts and a port
+tcpdump -n -i <interface> "(dst host <server 1 ip> or dst host <server 2 ip>) and (dst port <port> or src port <port>)" -w /path/to/output.pcap
 
 --- Listening ports - udp and tcp ---
 netstat -tulpn
