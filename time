@@ -1,0 +1,11 @@
+time conversions
+ - OS X 
+   epoch -> readable
+   # date -jr 1468002292 
+ 
+ - Linux 
+   epoch -> readable
+   # date -d @1468002292
+   
+   readable -> epoch
+   # date +%s -d "Jan 1, 1980 00:00:01" 
