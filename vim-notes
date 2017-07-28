@@ -1,3 +1,6 @@
+Search Forward for foo - /foo
+Search Backwards for foo - ?foo
+
 Yank Line - y_ \| yy \| dd P 
 Cut line - dd
 paste yanked/cut text - p
