@@ -1,5 +1,11 @@
 --- Traffic capture + stats using iperf ---
---Server listening - tcp --
+-- Port check (rhel6) --
+nc -vz <host ip> <port>
+
+-- Port check (rhel7) --
+echo | nc -w1 {host ip} {port} >/dev/null 2>&1; echo $? 
+
+-- Server listening - tcp --
 iperf -s
 
 -- Server listening - udp --
