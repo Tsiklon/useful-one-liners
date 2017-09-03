@@ -1,3 +1,9 @@
+Replace Foo with Bar on one line    - :s/Foo/Bar/g
+Replace Foo with Bar on all lines   - :%s/Foo/Bar/g
+Replace Foo with Bar on one line with confirmation - :s/Foo/Bar/gc
+Replace Foo with Bar on all lines with confirmation - :%s/Foo/Bar/gc
+Replace Foo with Bar on All lines between 5 and 12 - :5,12s/Foo/Bar/g
+
 Search Forward for foo - /foo
 Search Backwards for foo - ?foo
 
@@ -24,3 +30,5 @@ cut all text from cursor to the next previous foo - d?foo
 
 yank all text from cursor to the next instance foo - y/foo
 yank all text from cursor to the next previous foo - y?foo
+
+delete all lines matching foo - :g/foo/d
