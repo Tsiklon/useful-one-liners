@@ -9,6 +9,9 @@ SHOW GRANTS FOR 'user'@'host';
 -- Show users --
 SELECT User,Host,Password FROM mysql.user;
 
+-- Show Users per database --
+SELECT user,host from mysql.db where db="<Database Name>";
+
 --List databases --
 SHOW DATABASES;
 
