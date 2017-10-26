@@ -15,3 +15,5 @@ This is a loose collection of one liners including such memorable gems as;
  - Validating Certificate/CA Bundles 
  - Validating a Cert and a Key
  - Subnet Mask Table
+
+I'm also beginning to use this repo to collect useful notes about standard unix tools.
