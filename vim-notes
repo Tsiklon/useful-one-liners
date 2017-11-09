@@ -32,3 +32,5 @@ yank all text from cursor to the next instance foo - y/foo
 yank all text from cursor to the next previous foo - y?foo
 
 delete all lines matching foo - :g/foo/d
+
+Clear search highlighting - :noh
