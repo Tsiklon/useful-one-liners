@@ -2,6 +2,9 @@
 # echo 0 > /sys/bus/pci/rescan
 
 ~~~ Rescan whole SCSI Bus - I.E. adding a new Block device or path and it hasn't been picked up and you don't know where it is (last resort - potentially disruptive) - replace 'hostH' with the HBA in question
+# lsscsi
+# cat /proc/scsi/scsi  Note;- scsi# is the host to use.
+
 # echo "- - -" > /sys/class/scsi_host/hostH/scan  
 
 ~~~ Adding a LUN Path non disruptively (DEFINITELY NOT COMPLETE)
