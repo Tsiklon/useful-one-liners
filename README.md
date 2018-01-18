@@ -1,7 +1,8 @@
 # useful-one-liners
-useful one liners
+## Useful one liners
 
 This is a loose collection of one liners including such memorable gems as;
+
  - Low disk diagnosis
  - Numbers of files and subdirectories
  - Basic Curl to see if your site is up.
@@ -17,3 +18,5 @@ This is a loose collection of one liners including such memorable gems as;
  - Subnet Mask Table
 
 I'm also beginning to use this repo to collect useful notes about standard unix tools.
+
+I'm also slowly converting this into Markdown
