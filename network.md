@@ -35,3 +35,6 @@
 
 ## Port check (rhel7) --
 ``` echo | nc -w1 {host ip} {port} >/dev/null 2>&1; echo $? ``` 
+
+## Port Check absent of netcat
+``` timeout 3 bash -c '</dev/tcp/{host}/{port}' && echo -e "Return code $? - Port open." || echo -e "Return code $? - Port Closed" ```
