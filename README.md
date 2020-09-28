@@ -19,4 +19,3 @@ This is a loose collection of one liners including such memorable gems as;
 
 I'm also beginning to use this repo to collect useful notes about standard unix tools.
 
-I'm also slowly converting this into Markdown
